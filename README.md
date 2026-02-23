@@ -100,7 +100,7 @@ WHERE id = '{{ $fromAI("record_id", "The record identifier to query") }}'
 - **Meta for Developers**: App with WhatsApp Business API configured
 - **Groq**: API key for the language model
 - **Redis**: Redis instance (Upstash recommended for free tier)
-- **PostgreSQL**: Database with the `tab_tra_t_permiso` table
+- **PostgreSQL**: Database with the `your_database_table` table
 
 ### Required Credentials in n8n
 | Credential | Node | Description |
