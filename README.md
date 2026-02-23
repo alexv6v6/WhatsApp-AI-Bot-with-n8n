@@ -2,6 +2,10 @@
 
 Conversational WhatsApp bot integrated with artificial intelligence, persistent memory, and PostgreSQL database querying.
 
+## Workflow Diagram
+
+![WhatsApp AI Bot Workflow](workflow-diagram.png)
+
 ## Overview
 
 This workflow receives WhatsApp messages through the Meta API, processes them using an AI agent (Groq) with conversational memory (Redis), and has the ability to query permit/expedition information from a PostgreSQL database.
