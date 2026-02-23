@@ -67,17 +67,14 @@ IF (Is it a Meta verification request?)
 
 ### 7. Postgres Tool (Execute SQL Query)
 - **Type**: `n8n-nodes-base.postgresTool`
-- **Description**: Queries expedition or permit information
+- **Description**: Queries record information from the database
 - **Query**:
 ```sql
-Select per_codigo as expediente, 
-       per_estado as estadoexpediente, 
-       per_fedefo as fechadebidaforma, 
-       obtener_nombremunicipio(mun_codigo, '17') as municipio
-from tab_tra_t_permiso
-where per_codigo = '{{ $fromAI("per_codigo", "The expedition code to query") }}'
+SELECT id, status, created_at, name
+FROM your_table
+WHERE id = '{{ $fromAI("record_id", "The record identifier to query") }}'
 ```
-- **Function**: Allows the agent to query expeditions in PostgreSQL. The agent automatically extracts the expedition code from the user's message using `$fromAI`.
+- **Function**: Allows the agent to query records in PostgreSQL. The agent automatically extracts the identifier from the user's message using `$fromAI`. Adapt the query to your own table structure.
 
 ### 8. HTTP Request (WhatsApp API)
 - **Type**: `n8n-nodes-base.httpRequest`
